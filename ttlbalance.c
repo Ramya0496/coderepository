@@ -2,16 +2,17 @@
 #include<stdlib.h>
 #include<string.h>
 int main(void) {
-	char str=(char *)malloc(20*sizeof(char));
-	int n,i=0,open,close;
+	char *str=(char*)malloc(20*sizeof(char));
+	int n,i=0,open=0,close=0;
 	scanf("%s",str);
 	n=strlen(str);
-    while(str[i]!='/0')
+    while(str[i]!='\0')
     {
     	if(str[i]=='(')
     	open++;
     	else if(str[i]==')')
     	close++;
+    	i++;
     }
     if(open==close)
     printf("length=%d",open+close);
